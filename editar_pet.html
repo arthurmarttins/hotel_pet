@@ -1,26 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Editar Pet</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_editar_reserva.css">
+    <title>Editar Reserva</title>
 </head>
 <body>
-  <h1>Hotel Pet - Editar Pet</h1>
-  <form>
-    <label for="nome">Nome *</label>
-    <input type="text" id="nome" required>
+    <header>
+        <h1>Hotel Pet</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="pets.html">Pet</a></li>
+                <li><a href="usuarios.html">Usuários</a></li>
+                <li><a href="configuracoes.html">Configurações</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <label for="tipo">Tipo *</label>
-    <input type="text" id="tipo" required>
+    <main>
+        <h2>Editar Reserva</h2>
+        <form>
+            <label for="proprietario">Proprietário *</label>
+            <input type="text" id="proprietario" name="proprietario" required>
 
-    <label for="tamanho">Tamanho *</label>
-    <input type="text" id="tamanho" required>
+            <label for="pet">Pet *</label>
+            <input type="text" id="pet" name="pet" required>
 
-    <label for="raca">Raça *</label>
-    <input type="text" id="raca" required>
+            <label for="periodo">Período *</label>
+            <input type="text" id="periodo" name="periodo" placeholder="dd/mm/aaaa - dd/mm/aaaa" required>
 
-    <label for="imagem">Imagem</label>
-    <input type="file" id="imagem" accept="image/*">
+            <label for="status">Status</label>
+            <select id="status" name="status">
+                <option value="reservado">Reservado</option>
+                <option value="em_andamento">Em andamento</option>
+                <option value="finalizado">Finalizado</option>
+                <option value="cancelado">Cancelado</option>
+            </select>
 
-    <button type="button">Salvar</button>
-    <button type="
+            <label for="total">Total das Diárias</label>
+            <input type="text" id="total" name="total" required>
+
+            <label for="notas">Notas</label>
+            <textarea id="notas" name="notas" rows="4"></textarea>
+
+            <button type="submit">Salvar</button>
+            <button type="reset">Limpar</button>
+        </form>
+    </main>
+</body>
+</html>

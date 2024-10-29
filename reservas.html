@@ -1,61 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Reservas</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_nova_reserva.css">
+    <title>Nova Reserva</title>
 </head>
 <body>
-  <div class="container">
     <header>
-      <h1>Hotel Pet</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Pets</a></li>
-          <li><a href="#">Usuários</a></li>
-          <li><a href="#">Configurações</a></li>
-          <li><a href="#">Reservas</a></li>
-        </ul>
-      </nav>
+        <h1>Hotel Pet</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="pets.html">Pet</a></li>
+                <li><a href="usuarios.html">Usuários</a></li>
+                <li><a href="configuracoes.html">Configurações</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-      <h2>Reservas</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Pet</th>
-            <th>Chegada</th>
-            <th>Partida</th>
-            <th>Status</th>
-            <th>Total</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>12349984501</td>
-            <td>Max</td>
-            <td>02/05/2021</td>
-            <td>07/05/2021</td>
-            <td>Reservada</td>
-            <td>R$ 40,00</td>
-            <td><a href="#">Editar</a> | <a href="#">Visualizar</a></td>
-          </tr>
-          <tr>
-            <td>12349984502</td>
-            <td>Ginger</td>
-            <td>02/05/2021</td>
-            <td>07/05/2021</td>
-            <td>Em progresso</td>
-            <td>R$ 40,00</td>
-            <td><a href="#">Editar</a> | <a href="#">Visualizar</a></td>
-          </tr>
-        </tbody>
-      </table>
+        <h2>Nova Reserva</h2>
+        <form>
+            <label for="proprietario">Proprietário *</label>
+            <input type="text" id="proprietario" name="proprietario" required>
+
+            <label for="pet">Pet *</label>
+            <input type="text" id="pet" name="pet" required>
+
+            <label for="periodo">Período *</label>
+            <input type="text" id="periodo" name="periodo" placeholder="dd/mm/aaaa - dd/mm/aaaa" required>
+
+            <label for="status">Status</label>
+            <select id="status" name="status">
+                <option value="reservado">Reservado</option>
+                <option value="em_andamento">Em andamento</option>
+                <option value="finalizado">Finalizado</option>
+                <option value="cancelado">Cancelado</option>
+            </select>
+
+            <label for="notas">Notas</label>
+            <textarea id="notas" name="notas" rows="4"></textarea>
+
+            <button type="submit">Salvar</button>
+            <button type="reset">Limpar</button>
+        </form>
     </main>
-  </div>
 </body>
 </html>
