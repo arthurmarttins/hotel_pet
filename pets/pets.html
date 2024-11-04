@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style_pets.css">
+        <title>Usuários</title>
+    </head>
+    <body>
+        <div class="container">
+            <aside class="sidebar">
+                <h1>HotelPet</h1>
+                <nav>
+                    <ul>
+                        <li><a href="/pets/pets.html">Pet</a></li>
+                        <li><a href="/usuarios/usuarios.html">Usuários</a></li>
+                        <li><a href="/configuracoes/configuracoes.html">Configurações</a></li>
+                        <li><a href="/reservas/reservas.html">Reservas</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="content">
+                <div class="perfil">
+                    <div class="img-perfil">
+                        <a href="#"><img src="perfil.png" alt="Perfil" width="35" height="35"></a>
+                    </div>
+                </div>
+
+                <div class="reservas">
+                    <h2>Pets</h2>
+
+                    <div class="form-action_novareserva">
+                        <button type="submit">Novo Pet</button>
+                    </div>
+
+                    <div class="reservas2">
+                        <form>
+                            <div class="form-reservas">
+                                <div class="form-group">
+                                    <label for="Id">Id</label>
+                                    <input type="text" id="Id" name="Id" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="raça">Raça</label>
+                                    <input type="text" id="raça" name="raça" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" id="nome" name="nome" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="tamanho">Tamanho</label>
+                                    <input type="text" id="tamanho" name="tamanho" required>
+                                </div>
+                             
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit">Pesquisar</button>
+                                <button type="reset">Limpar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Tipo</th>
+                                    <th>Raça</th>
+                                    <th>Tamanho</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" /></td>
+                                    <td>1</td>
+                                    <td>João Silva</td>
+                                    <td>Gato</td>
+                                    <td>Persa</td>
+                                    <td>Médio</td>
+                                    <td><a href="#">Editar</a> | <a href="#">Visualizar</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" /></td>
+                                    <td>2</td>
+                                    <td>Ana Pereira</td>
+                                    <td>Cachorro</td>
+                                    <td>Labrador</td>
+                                    <td>Grande</td>
+                                    <td><a href="#">Editar</a> | <a href="#">Visualizar</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" /></td>
+                                    <td>3</td>
+                                    <td>Carlos Souza</td>
+                                    <td>Pássaro</td>
+                                    <td>Canário</td>
+                                    <td>Pequeno</td>
+                                    <td><a href="#">Editar</a> | <a href="#">Visualizar</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

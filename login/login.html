@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <div class="image-carousel">
+            <div class="carousel-images"></div>
+        </div>
+        
+        <main>
+            <h1>HotelPet</h1>
+            <form>
+                <label for="email">Login</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <div class="checkbox-container">
+                    <input type="checkbox" id="lembrar" name="lembrar">
+                    <label for="lembrar">Mantenha-me conectado</label>
+                </div>
+
+                <button type="submit">Enviar</button>
+                
+                <p><a href="esqueci_senha.html">Esqueci a senha</a></p>
+
+                <div class="social-login">
+                    <span>ou</span>
+                    <a href="#"><img src="facebook.png" alt="Facebook" width="24" height="24"></a>
+                    <a href="#"><img src="x.png" alt="Twitter" width="24" height="24"></a>
+                    <a href="#"><img src="google.png" alt="Google" width="24" height="24"></a>
+                </div>
+                <p><a href="/criar_conta/criar_conta.html">Criar uma conta</a></p>
+            </form>
+        </main>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const images = [
+            '1.webp',
+            '2.jpg'
+        ];
+
+        function showImage(index) {
+            const imageContainer = document.querySelector('.carousel-images');
+            imageContainer.innerHTML = `<img src="${images[index]}" alt="Cão">`;
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        setInterval(nextImage, 3000);
+        showImage(currentIndex);
+    </script>
+</body>
+</html>

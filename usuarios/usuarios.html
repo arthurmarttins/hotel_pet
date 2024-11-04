@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style_usuarios.css">
+        <title>Usuários</title>
+    </head>
+    <body>
+        <div class="container">
+            <aside class="sidebar">
+                <h1>HotelPet</h1>
+                <nav>
+                    <ul>
+                        <li><a href="/pets/pets.html">Pet</a></li>
+                        <li><a href="/usuarios/usuarios.html">Usuários</a></li>
+                        <li><a href="/configuracoes/configuracoes.html">Configurações</a></li>
+                        <li><a href="/reservas/reservas.html">Reservas</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="content">
+                <div class="perfil">
+                    <div class="img-perfil">
+                        <a href="#"><img src="perfil.png" alt="Perfil" width="35" height="35"></a>
+                    </div>
+                </div>
+
+                <div class="reservas">
+                    <h2>Usuários</h2>
+
+                    <div class="form-action_novareserva">
+                        <button type="submit">Novo</button>
+                        <button type="submit">Remover</button>
+                        <button type="submit">Mudar status</button>
+                    </div>
+
+                    <div class="reservas2">
+                        <form>
+                            <div class="form-reservas">
+                                <div class="form-group">
+                                    <label for="Id">Id *</label>
+                                    <input type="text" id="Id" name="Id" required>
+                                </div>
+
+                                <div class="form-group-periodo">
+                                    <label for="entrada">Criado em *</label>
+                                    <input type="text" id="Criado em" name="Criado em" placeholder="dd/mm/aaaa" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="proprietario">Email *</label>
+                                    <input type="text" id="email" name="email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="proprietario">Nome *</label>
+                                    <input type="text" id="Nome" name="Nome" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="status">Status</label>
+                                    <select id="status" name="status">
+                                        <option value="Ativo">Ativo</option>
+                                        <option value="Inativo">Inativo</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="funcao">Função</label>
+                                    <select id="funcao" name="funcao">
+                                        <option value="gerente">Gerente</option>
+                                        <option value="funcionario">Funcionário</option>
+                                        <option value="cliente">Cliente</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit">Pesquisar</button>
+                                <button type="reset">Limpar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Foto</th>
+                                    <th>Email</th>
+                                    <th>Nome</th>
+                                    <th>Função</th>
+                                    <th>Status</th>
+                                    <th>Criado em</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox" /></td>
+                                    <td><img src="perfil.png" alt="Imagem de perfil" width="25" height="25"></td>
+                                    <td>joao@email.com</td>
+                                    <td>João Silva</td>
+                                    <td>Gerente</td>
+                                    <td><span class="status ativo">Ativo</span></td>
+                                    <td>02/05/2021</td>
+                                    <td><a href="#">Editar</a> | <a href="#">Visualizar</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" /></td>
+                                    <td><img src="perfil.png" alt="Imagem de perfil"width="25" height="25"></td>
+                                    <td>ana@email.com</td>
+                                    <td>Ana Pereira</td>
+                                    <td>Funcionário</td>
+                                    <td><span class="status inativo">Inativo</span></td>
+                                    <td>15/06/2021</td>
+                                    <td><a href="#">Editar</a> | <a href="#">Visualizar</a></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" /></td>
+                                    <td><img src="perfil.png" alt="Imagem de perfil" width="25" height="25"></td>
+                                    <td>carlos@email.com</td>
+                                    <td>Carlos Souza</td>
+                                    <td>Cliente</td>
+                                    <td><span class="status ativo">Ativo</span></td>
+                                    <td>10/07/2021</td>
+                                    <td><a href="#">Editar</a> | <a href="#">Visualizar</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

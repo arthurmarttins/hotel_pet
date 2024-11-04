@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style_configuracoes.css">
+        <title>Usuários</title>
+    </head>
+    <body>
+        <div class="container">
+            <aside class="sidebar">
+                <h1>HotelPet</h1>
+                <nav>
+                    <ul>
+                        <li><a href="/pets/pets.html">Pet</a></li>
+                        <li><a href="/usuarios/usuarios.html">Usuários</a></li>
+                        <li><a href="/configuracoes/configuracoes.html">Configurações</a></li>
+                        <li><a href="/reservas/reservas.html">Reservas</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="content">
+                <div class="perfil">
+                    <div class="img-perfil">
+                        <a href="#"><img src="perfil.png" alt="Perfil" width="35" height="35"></a>
+                    </div>
+                </div>
+
+                <div class="reservas">
+                    <h2>Configurações</h2>
+
+                    <div class="reservas2">
+                        <form>
+                            <label for="valor_diaria">Valor da Diária</label>
+                            <input type="text" id="valor_diaria" name="valor_diaria" placeholder="R$ 00,00" required>
+                
+                            <label for="vagas">Vagas Disponíveis</label>
+                            <input type="number" id="vagas" name="vagas" required>
+                             
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit">Salvar</button>
+                                <button type="reset">Limpar</button>
+                            </div>
+                        </form>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

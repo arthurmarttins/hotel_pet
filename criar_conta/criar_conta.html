@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_criar_conta.css">
+    <title>Criar Conta</title>
+</head>
+<body>
+    <div class="criar_conta-container">
+        <div class="image-carousel">
+            <div class="carousel-images"></div>
+        </div>
+        
+        <main>
+            <h1>Criar</h1>
+            <h1>Conta</h1>
+                <form>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+        
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" required>
+        
+                    <button type="submit">Criar Conta</button>
+                    <p><a href="/Login/login.html">Já tem uma conta?Login</a></p>
+                </form>
+        </main>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const images = [
+            '1.webp',
+            '2.jpg'
+        ];
+
+        function showImage(index) {
+            const imageContainer = document.querySelector('.carousel-images');
+            imageContainer.innerHTML = `<img src="${images[index]}" alt="Cão">`;
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        setInterval(nextImage, 3000);
+        showImage(currentIndex);
+    </script>
+</body>
+</html>
