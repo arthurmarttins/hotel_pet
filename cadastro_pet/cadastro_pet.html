@@ -1,49 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleCadPet.css">
-    <title>Novo Pet</title>
-</head>
-<body>
-    <header>
-        <h1>Hotel Pet</h1>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="pets.html">Pet</a></li>
-                <li><a href="usuarios.html">Usuários</a></li>
-                <li><a href="configuracoes.html">Configurações</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-            </ul>
-        </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style_cadastro_pet.css">
+        <title>Novo Pet</title>
+    </head>
+    <body>
+        <div class="container">
+            <aside class="sidebar">
+                <h1>HotelPet</h1>
+                <nav>
+                    <ul>
+                        <li><a href="/pets/pets.html">Pet</a></li>
+                        <li><a href="/usuarios/usuarios.html">Usuários</a></li>
+                        <li><a href="/configuracoes/configuracoes.html">Configurações</a></li>
+                        <li><a href="/reservas/reservas.html">Reservas</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-    <main>
-        <h2>Novo Pet</h2>
-        <form>
-            <label for="proprietario">Proprietário *</label>
-            <input type="text" id="proprietario" name="proprietario" required>
+            <main class="content">
 
-            <label for="nome">Nome *</label>
-            <input type="text" id="nome" name="nome" required>
+                <div class="perfil">
+                    <div class ="img-perfil">
+                        <a href="#"><img src="perfil.png" alt="Perfil" width="35" height="35"></a>
+                    </div>
+                </div>
 
-            <label for="tipo">Tipo *</label>
-            <input type="text" id="tipo" name="tipo" required>
+                <div class="reservas">
+                    <h2>Novo Pet</h2>
 
-            <label for="tamanho">Tamanho *</label>
-            <input type="text" id="tamanho" name="tamanho" required>
 
-            <label for="raca">Raça *</label>
-            <input type="text" id="raca" name="raca" required>
+                    <div class="reservas2">
+                        <form>
+                             <div class="form-reservas">
+                                <label for="proprietario">Proprietário *</label>
+                                <input type="text" id="proprietario" name="proprietario" required>
+                               </div>
+                  
+                              <div class="form-reservas">
+                                  <div class="form-group">
+                                      <label for="Nome">Nome</label>
+                                      <input type="text" id="Nome" name="Nome" required>
+                                  </div>
 
-            <label for="imagem">Imagem</label>
-            <input type="file" id="imagem" name="imagem">
+                                  <div class="form-group">
+                                    <label for="status">Tipo</label>
+                                    <select id="status" name="status">
+                                        <option
+                                            value="Cachorro">Cachorro</option>
+                                        <option
+                                            value="Gato">Gato</option>
+                                        
+                                    </select>
+                                </div>
+                  
+                                  <div class="form-group">
+                                      <label for="raça">Raça</label>
+                                      <input type="text" id="raça" name="raça" required>
+                                  </div>
+                  
+                                  <div class="form-group">
+                                      <label for="tamanho">Tamanho</label>
+                                      <input type="text" id="tamanho" name="tamanho" required>
 
-            <button type="submit">Salvar</button>
-            <button type="reset">Limpar</button>
-        </form>
-    </main>
-</body>
+                                      <div class="form-group">
+                                        <label for="imagem_pet">Anexar Imagem do Pet</label>
+                                        <input type="file" id="imagem_pet" name="imagem_pet" accept="image/*">
+                                    </div>
+
+                            <div class="form-actions">
+                                <button type="submit">Salvar</button>
+                                <button type="reset">Limpar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </main>
+        </div>
+
+    </body>
 </html>
