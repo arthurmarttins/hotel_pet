@@ -1,35 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_visualizar_pet.css">
-    <title>Visualizar Pet</title>
-</head>
-<body>
-    <header>
-        <h1>Hotel Pet</h1>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="pets.html">Pet</a></li>
-                <li><a href="usuarios.html">Usuários</a></li>
-                <li><a href="configuracoes.html">Configurações</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-            </ul>
-        </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style_visualizar_pet.css">
+        <title>Ver Reservas</title>
+    </head>
+    <body>
+        <div class="container">
+            <aside class="sidebar">
+                <h1>HotelPet</h1>
+                <nav>
+                    <ul>
+                        <li><a href="/pets/pets.html">Pet</a></li>
+                        <li><a href="/usuarios/usuarios.html">Usuários</a></li>
+                        <li><a href="/configuracoes/configuracoes.html">Configurações</a></li>
+                        <li><a href="/reservas/reservas.html">Reservas</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-    <main>
-        <h2>Detalhes do Pet</h2>
-        <div class="pet-detalhes">
-            <p><strong>Nome:</strong> Max</p>
-            <p><strong>Tipo:</strong> Cachorro</p>
-            <p><strong>Raça:</strong> Pastor Alemão</p>
-            <p><strong>Tamanho:</strong> Grande</p>
-            <img src="pet_imagem.jpg" alt="Imagem do Pet" class="pet-imagem">
+            <main class="content">
+
+                <div class="perfil">
+                    <div class ="img-perfil">
+                        <a href="#"><img src="perfil.png" alt="Perfil" width="35" height="35"></a>
+                    </div>
+                </div>
+
+                <div class="reservas">
+                    <h2>Ver Pet</h2>
+
+                    <!-- Exemplo de uma reserva detalhada -->
+                    <div class="reserva-detalhes">
+                        <p><strong>Nome:</strong> Max</p>
+                        <p><strong>Tipo:</strong> Cachorro</p>
+                        <p><strong>Raça:</strong> Pastor Alemão</p>
+                        <p><strong>Tamanho:</strong> Grande</p>
+                    
+
+                        
+                        <!-- Aqui você pode adicionar imagens relacionadas à reserva -->
+                        <div class="imagens-reserva">
+                            <h3>Imagens</h3>
+                            <img src="imagem_pet_1.jpg" alt="Imagem Pet 1">
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button onclick="window.history.back()">Voltar</button>
+                            </div>
+                 
+
+                </div>
+
+            </main>
         </div>
-        <button onclick="window.history.back()">Voltar</button>
-    </main>
-</body>
+    </body>
 </html>
