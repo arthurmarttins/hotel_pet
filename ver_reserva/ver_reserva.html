@@ -1,36 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style_ver_reserva.css">
-    <title>Ver Reserva</title>
-</head>
-<body>
-    <header>
-        <h1>Hotel Pet</h1>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="pets.html">Pet</a></li>
-                <li><a href="usuarios.html">Usuários</a></li>
-                <li><a href="configuracoes.html">Configurações</a></li>
-                <li><a href="reservas.html">Reservas</a></li>
-            </ul>
-        </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style_ver_reservas.css">
+        <title>Ver Reservas</title>
+    </head>
+    <body>
+        <div class="container">
+            <aside class="sidebar">
+                <h1>HotelPet</h1>
+                <nav>
+                    <ul>
+                        <li><a href="/pets/pets.html">Pet</a></li>
+                        <li><a href="/usuarios/usuarios.html">Usuários</a></li>
+                        <li><a href="/configuracoes/configuracoes.html">Configurações</a></li>
+                        <li><a href="/reservas/reservas.html">Reservas</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-    <main>
-        <h2>Detalhes da Reserva</h2>
-        <div class="reserva-detalhes">
-            <p><strong>Proprietário:</strong> José da Silva</p>
-            <p><strong>Pet:</strong> Max</p>
-            <p><strong>Período:</strong> 02/05/2021 - 07/05/2021</p>
-            <p><strong>Status:</strong> Finalizada</p>
-            <p><strong>Total das Diárias:</strong> R$ 40,00</p>
-            <p><strong>Notas:</strong> Lorem ipsum dolor sit amet, consectet ui i iadipiscing elit.</p>
+            <main class="content">
+
+                <div class="perfil">
+                    <div class ="img-perfil">
+                        <a href="#"><img src="perfil.png" alt="Perfil" width="35" height="35"></a>
+                    </div>
+                </div>
+
+                <div class="reservas">
+                    <h2>Ver Reservas</h2>
+
+                    <!-- Exemplo de uma reserva detalhada -->
+                    <div class="reserva-detalhes">
+                        <p><strong>Id:</strong> 123456789</p>
+                        <p><strong>Proprietário:</strong> José da Silva</p>
+                        <p><strong>Pet:</strong> Max</p>
+                        <p><strong>Chegada:</strong> 02/05/2021</p>
+                        <p><strong>Partida:</strong> 02/05/2021</p>
+                        <p><strong>Notas:</strong> Lorem ipsum dolor sit amet, consectetui adipiscing elit.</p>
+                        <p><strong>Notas dos funcionários:</strong> Lorem ipsum dolor sit amet, consectetui adipiscing elit.</p>
+                    
+
+                        
+                        <!-- Aqui você pode adicionar imagens relacionadas à reserva -->
+                        <div class="imagens-reserva">
+                            <h3>Imagens</h3>
+                            <img src="imagem_reserva_1.jpg" alt="Imagem Reserva 1">
+                            <img src="imagem_reserva_2.jpg" alt="Imagem Reserva 2">
+                        </div>
+                        
+
+                        <p><strong>Status:</strong></p>
+                        <div class="status">
+                            <h3>Finalizado</h3>
+                        </div>
+
+                       
+                        <p><strong>Total das Diárias:</strong> R$ 40,00</p>
+                        <p><strong>Recibo:</strong> Recibo.pdf</p>
+                        <p><strong>Criado em:</strong> 02/05/2021</p>
+                        <p><strong>Atualizado em:</strong> 02/05/2021</p>
+                        </div>
+                    <!-- Fim de uma reserva detalhada -->
+                   
+                 
+
+                </div>
+
+            </main>
         </div>
-        <button onclick="window.history.back()">Voltar</button>
-    </main>
-</body>
+    </body>
 </html>
