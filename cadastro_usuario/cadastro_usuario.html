@@ -1,51 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro de Usuário</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Hotel Pet</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Pets</a></li>
-          <li><a href="#">Usuários</a></li>
-          <li><a href="#">Configurações</a></li>
-          <li><a href="#">Reservas</a></li>
-        </ul>
-      </nav>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style_cadastro_usuario.css">
+        <title>Novo Usuário</title>
+    </head>
+    <body>
+        <div class="container">
+            <aside class="sidebar">
+                <h1>HotelPet</h1>
+                <nav>
+                    <ul>
+                        <li><a href="/pets/pets.html">Pet</a></li>
+                        <li><a href="/usuarios/usuarios.html">Usuários</a></li>
+                        <li><a href="/configuracoes/configuracoes.html">Configurações</a></li>
+                        <li><a href="/reservas/reservas.html">Reservas</a></li>
+                    </ul>
+                </nav>
+            </aside>
 
-    <main>
-      <h2>Novo Usuário</h2>
-      <form>
-        <label for="email">Email *</label>
-        <input type="email" id="email" name="email" required>
+            <main class="content">
 
-        <label for="nome">Nome *</label>
-        <input type="text" id="nome" name="nome" required>
+                <div class="perfil">
+                    <div class ="img-perfil">
+                        <a href="#"><img src="perfil.png" alt="Perfil" width="35" height="35"></a>
+                    </div>
+                </div>
 
-        <label for="sobrenome">Sobrenome *</label>
-        <input type="text" id="sobrenome" name="sobrenome" required>
+                <div class="reservas">
+                    <h2>Novo Usuário</h2>
 
-        <label for="telefone">Telefone *</label>
-        <input type="text" id="telefone" name="telefone" required>
 
-        <label for="funcao">Função</label>
-        <select id="funcao" name="funcao">
-          <option value="cliente">Cliente</option>
-          <option value="funcionario">Funcionário</option>
-          <option value="gerente">Gerente</option>
-        </select>
+                    <div class="reservas2">
+                        <form>
 
-        <button type="button">Salvar</button>
-        <button type="reset">Limpar</button>
-      </form>
-    </main>
-  </div>
-</body>
+                             <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                               </div>
+                  
+                                  <div class="form-group">
+                                      <label for="Nome">Nome</label>
+                                      <input type="text" id="Nome" name="Nome" required>
+                                  </div>
+
+                                  <div class="form-group">
+                                    <label for="telefone">Telefone *</label>
+                                     <input type="text" id="telefone" name="telefone" placeholder="(00)0000-0000" required>
+                                   </div>
+
+                                    <div class="form-group">
+                                        <label for="Nome">Nome</label>
+                                        <input type="text" id="Nome" name="Nome" required>
+                                    </div>
+
+                                  <div class="form-group">
+                                    <label for="funcao">Função</label>
+                                    <select id="funcao" name="funcao">
+                                      <option value="cliente">Cliente</option>
+                                      <option value="funcionario">Funcionário</option>
+                                      <option value="gerente">Gerente</option>
+                                    </select>
+                                </div>
+                  
+
+                                      <div class="form-group">
+                                        <label for="imagem_pet">Anexar Imagem do Pet</label>
+                                        <input type="file" id="imagem_pet" name="imagem_pet" accept="image/*">
+                                    </div>
+
+                            <div class="form-actions">
+                                <button type="submit">Salvar</button>
+                                <button type="reset">Limpar</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </main>
+        </div>
+
+    </body>
 </html>
