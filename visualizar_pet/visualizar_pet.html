@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style_visualizar_pet.css">
-        <title>Ver Reservas</title>
+        <title>Ver Pet</title>
     </head>
     <body>
         <div class="container">
@@ -23,7 +23,7 @@
             <main class="content">
 
                 <div class="perfil">
-                    <div class ="img-perfil">
+                    <div class="img-perfil">
                         <a href="#"><img src="perfil.png" alt="Perfil" width="35" height="35"></a>
                     </div>
                 </div>
@@ -31,29 +31,30 @@
                 <div class="reservas">
                     <h2>Ver Pet</h2>
 
-                    <!-- Exemplo de uma reserva detalhada -->
+                
                     <div class="reserva-detalhes">
-                        <p><strong>Nome:</strong> Max</p>
-                        <p><strong>Tipo:</strong> Cachorro</p>
-                        <p><strong>Raça:</strong> Pastor Alemão</p>
-                        <p><strong>Tamanho:</strong> Grande</p>
-                    
-
+                        <p><strong>Nome:</strong> <span id="pet-nome"></span></p>
+                        <p><strong>Tipo:</strong> <span id="pet-tipo"></span></p>
+                        <p><strong>Raça:</strong> <span id="pet-raca"></span></p>
+                        <p><strong>Tamanho:</strong> <span id="pet-tamanho"></span></p>
                         
-                        <!-- Aqui você pode adicionar imagens relacionadas à reserva -->
+         
                         <div class="imagens-reserva">
                             <h3>Imagens</h3>
-                            <img src="imagem_pet_1.jpg" alt="Imagem Pet 1">
+                            <img id="pet-imagem" src="" alt="Imagem do Pet" style="max-width: 200px;">
                         </div>
                         
                         <div class="form-actions">
                             <button onclick="window.history.back()">Voltar</button>
-                            </div>
-                 
+                        </div>
+
+                    </div>
 
                 </div>
 
             </main>
         </div>
+
+        <script src="visualizar_pet.js"></script>
     </body>
 </html>

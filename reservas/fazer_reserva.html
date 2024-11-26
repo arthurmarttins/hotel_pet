@@ -31,29 +31,37 @@
                 <div class="reservas">
                     <h2>Fazer Reserva</h2>
 
-
                     <div class="reservas2">
-                        <form>
+                        <form id="form-reserva">
                             <div class="form-reservas">
 
                                 <div class="form-group">
                                     <label for="pet">Pet *</label>
-                                    <input type="text" id="pet" name="pet"
-                                        required>
+                                    <input type="text" id="pet" name="pet" required>
                                 </div>
 
                                 <div>
                                     <div class="form-group-periodo">
                                         <label for="entrada">Período *</label>
-                                        <input type="text" id="entrada"
-                                            name="entrada"
-                                            placeholder="dd/mm/aaaa" required onchange="calcularDiarias()">
+                                        <input type="text" id="entrada" name="entrada" placeholder="dd/mm/aaaa" required onchange="calcularDiarias()">
                                     </div>
                                     <div class="form-group-periodo">
-                                        <input type="text" id="saida"
-                                            name="saida"
-                                            placeholder="dd/mm/aaaa" required onchange="calcularDiarias()">
+                                        <input type="text" id="saida" name="saida" placeholder="dd/mm/aaaa" required onchange="calcularDiarias()">
                                     </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="status">Status</label>
+                                    <select id="status" name="status">
+                                        <option
+                                            value="reservado">Reservado</option>
+                                        <option value="em_andamento">Em
+                                            andamento</option>
+                                        <option
+                                            value="finalizado">Finalizado</option>
+                                        <option
+                                            value="cancelado">Cancelado</option>
+                                    </select>
                                 </div>
 
                                 <div class="form-group">
@@ -65,9 +73,6 @@
                                     <label for="total_diarias">Total de Diárias</label>
                                     <input type="text" id="total_diarias" name="total_diarias" readonly>
                                 </div>
-                             
-                                
-
                             </div>
 
                             <div class="form-actions">
@@ -82,29 +87,8 @@
             </main>
         </div>
 
-        <script>
-            function calcularDiarias() {
-                const entrada = document.getElementById("entrada").value;
-                const saida = document.getElementById("saida").value;
-                const totalDiariasInput = document.getElementById("total_diarias");
+        <script src="fazer_reserva.js"></script>
 
-                if (entrada && saida) {
-                    const dataEntrada = new Date(entrada);
-                    const dataSaida = new Date(saida);
-                    const diferencaEmMilissegundos = dataSaida - dataEntrada;
-                    const dias = diferencaEmMilissegundos / (1000 * 60 * 60 * 24);
-
-                    // Verifica se a saída é depois da entrada
-                    if (dias >= 0) {
-                        totalDiariasInput.value = dias;
-                    } else {
-                        totalDiariasInput.value = "Data inválida";
-                    }
-                } else {
-                    totalDiariasInput.value = "";
-                }
-            }
-        </script>
 
     </body>
 </html>

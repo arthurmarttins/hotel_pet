@@ -1,141 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style_editar_reservas.css">
-        <title>Editar Reserva</title>
-    </head>
-    <body>
-        <div class="container">
-            <aside class="sidebar">
-                <h1>HotelPet</h1>
-                <nav>
-                    <ul>
-                        <li><a href="/pets/pets.html">Pet</a></li>
-                        <li><a href="/usuarios/usuarios.html">Usuários</a></li>
-                        <li><a href="/configuracoes/configuracoes.html">Configurações</a></li>
-                        <li><a href="/reservas/reservas.html">Reservas</a></li>
-                    </ul>
-                </nav>
-            </aside>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_editar_reservas.css">
+    <title>Editar Reserva</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h1>HotelPet</h1>
+            <nav>
+                <ul>
+                    <li><a href="/pets/pets.html">Pet</a></li>
+                    <li><a href="/usuarios/usuarios.html">Usuários</a></li>
+                    <li><a href="/configuracoes/configuracoes.html">Configurações</a></li>
+                    <li><a href="/reservas/reservas.html">Reservas</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-            <main class="content">
-
-                <div class="perfil">
-                    <div class ="img-perfil">
-                        <a href="#"><img src="perfil.png" alt="Perfil" width="35" height="35"></a>
-                    </div>
+        <main class="content">
+            <div class="perfil">
+                <div class="img-perfil">
+                    <a href="#"><img src="perfil.png" alt="Perfil" width="35" height="35"></a>
                 </div>
+            </div>
 
-                <div class="reservas">
-                    <h2>Editar Reserva</h2>
+            <div class="reservas">
+                <h2>Editar Reserva</h2>
 
-
-                    <div class="reservas2">
-                        <form>
-                            <div class="form-reservas">
-
-                                <div class="form-group">
-                                    <label for="proprietario">Proprietário
-                                        *</label>
-                                    <input type="text" id="proprietario"
-                                        name="proprietario" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="pet">Pet *</label>
-                                    <input type="text" id="pet" name="pet"
-                                        required>
-                                </div>
-
-                                <div>
-                                    <div class="form-group-periodo">
-                                        <label for="entrada">Período *</label>
-                                        <input type="text" id="entrada"
-                                            name="entrada"
-                                            placeholder="dd/mm/aaaa" required onchange="calcularDiarias()">
-                                    </div>
-                                    <div class="form-group-periodo">
-                                        <input type="text" id="saida"
-                                            name="saida"
-                                            placeholder="dd/mm/aaaa" required onchange="calcularDiarias()">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="notas">Notas </label>
-                                     <textarea id="notas" name="notas" rows="4"></textarea>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="status">Status *</label>
-                                    <select id="status" name="status">
-                                        <option
-                                            value="reservado">Reservado</option>
-                                        <option value="em_andamento">Em
-                                            andamento</option>
-                                        <option
-                                            value="finalizado">Finalizado</option>
-                                        <option
-                                            value="cancelado">Cancelado</option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="anotacoes_funcionario">Anotações do funcionário</label>
-                                     <textarea id="anotacoes_funcionario" name="anotacoes_funcionario" rows="4"></textarea>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="imagem_pet">Anexar Imagem do Pet</label>
-                                    <input type="file" id="imagem_pet" name="imagem_pet" accept="image/*">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="total_diarias">Total de Diárias</label>
-                                    <input type="text" id="total_diarias" name="total_diarias" readonly>
-                                </div>
-                             
-                                
-
+                <div class="reservas2">
+                    <form id="form-editar">
+                        <div class="form-reservas">
+                            <div class="form-group">
+                                <label for="proprietario">Proprietário *</label>
+                                <input type="text" id="proprietario" name="proprietario" required>
                             </div>
 
-                            <div class="form-actions">
-                                <button type="submit">Salvar</button>
-                                <button type="reset">Limpar</button>
+                            <div class="form-group">
+                                <label for="pet">Pet *</label>
+                                <input type="text" id="pet" name="pet" required>
                             </div>
-                        </form>
-                    </div>
 
+                            <div>
+                                <div class="form-group-periodo">
+                                    <label for="entrada">Período *</label>
+                                    <input type="date" id="entrada" name="entrada" required onchange="calcularDiarias()">
+                                </div>
+                                <div class="form-group-periodo">
+                                    <input type="date" id="saida" name="saida" required onchange="calcularDiarias()">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="notas">Notas </label>
+                                <textarea id="notas" name="notas" rows="4"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="status">Status *</label>
+                                <select id="status" name="status">
+                                    <option value="reservado">Reservado</option>
+                                    <option value="em_andamento">Em andamento</option>
+                                    <option value="finalizado">Finalizado</option>
+                                    <option value="cancelado">Cancelado</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="anotacoes_funcionario">Anotações do funcionário</label>
+                                <textarea id="anotacoes_funcionario" name="anotacoes_funcionario" rows="4"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="imagem_pet">Anexar Imagem do Pet</label>
+                                <input type="file" id="imagem_pet" name="imagem_pet" accept="image/*">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="total_diarias">Total de Diárias</label>
+                                <input type="text" id="total_diarias" name="total_diarias" readonly>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit">Salvar</button>
+                            <button type="reset">Limpar</button>
+                        </div>
+                    </form>
                 </div>
+            </div>
+        </main>
+    </div>
 
-            </main>
-        </div>
-
-        <script>
-            function calcularDiarias() {
-                const entrada = document.getElementById("entrada").value;
-                const saida = document.getElementById("saida").value;
-                const totalDiariasInput = document.getElementById("total_diarias");
-
-                if (entrada && saida) {
-                    const dataEntrada = new Date(entrada);
-                    const dataSaida = new Date(saida);
-                    const diferencaEmMilissegundos = dataSaida - dataEntrada;
-                    const dias = diferencaEmMilissegundos / (1000 * 60 * 60 * 24);
-
-                    // Verifica se a saída é depois da entrada
-                    if (dias >= 0) {
-                        totalDiariasInput.value = dias;
-                    } else {
-                        totalDiariasInput.value = "Data inválida";
-                    }
-                } else {
-                    totalDiariasInput.value = "";
-                }
-            }
-        </script>
-
-    </body>
+    <script src="editar.js"></script>
+</body>
 </html>

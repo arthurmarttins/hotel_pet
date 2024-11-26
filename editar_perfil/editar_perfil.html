@@ -1,85 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style_editar_perfil.css">
-        <title>Editar Perfil</title>
-    </head>
-    <body>
-        <div class="container">
-            <aside class="sidebar">
-                <h1>HotelPet</h1>
-                <nav>
-                    <ul>
-                        <li><a href="/pets/pets.html">Pet</a></li>
-                        <li><a href="/usuarios/usuarios.html">Usuários</a></li>
-                        <li><a href="/configuracoes/configuracoes.html">Configurações</a></li>
-                        <li><a href="/reservas/reservas.html">Reservas</a></li>
-                    </ul>
-                </nav>
-            </aside>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_editar_perfil.css">
+    <title>Editar Perfil</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h1>HotelPet</h1>
+            <nav>
+                <ul>
+                    <li><a href="/pets/pets.html">Pet</a></li>
+                    <li><a href="/usuarios/usuarios.html">Usuários</a></li>
+                    <li><a href="/configuracoes/configuracoes.html">Configurações</a></li>
+                    <li><a href="/reservas/reservas.html">Reservas</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-            <main class="content">
-
-                <div class="perfil">
-                    <div class ="img-perfil">
-                        <a href="#"><img src="perfil.png" alt="Perfil" width="35" height="35"></a>
-                    </div>
+        <main class="content">
+            <div class="perfil">
+                <div class="img-perfil">
+                    <a href="#"><img src="perfil.png" alt="Perfil" width="35" height="35"></a>
                 </div>
+            </div>
 
-                <div class="reservas">
-                    <h2>Editar Perfil</h2>
+            <div class="reservas">
+                <h2>Editar Perfil</h2>
 
-
-                    <div class="reservas2">
-                        <form>
-                          
+                <div class="reservas2">
+                    <form id="editForm">
+                        <div class="form-reservas">
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" required>
+                                <label for="Id">Id *</label>
+                                <input type="text" id="Id" name="Id">
                             </div>
 
-                                 <div class="form-group">
-                                     <label for="Nome">Nome</label>
-                                     <input type="text" id="Nome" name="Nome" required>
-                                 </div>
+                            <div class="form-group">
+                                <label for="criadoEm">Criado em *</label>
+                                <input type="date" id="criadoEm" name="criadoEm">
+                            </div>
 
-                                 <div class="form-group">
-                                    <label for="sobrenome">Sobrenome *</label>
-                                    <input type="text" id="sobrenome" required>
-                               </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email">
+                            </div>
 
-                               <div class="form-group">
-                                <label for="telefone">Telefone *</label>
-                                 <input type="text" id="telefone" name="telefone" placeholder="(00)0000-0000" required>
-                               </div>
+                            <div class="form-group">
+                                <label for="nome">Nome *</label>
+                                <input type="text" id="nome" name="nome">
+                            </div>
 
-                               <div class="form-group">
-                                    <label for="funcao">Função</label>
-                                    <select id="funcao">
+                            <div class="form-group">
+                                <label for="status">Status</label>
+                                <select id="status" name="status">
+                                    <option value="Ativo">Ativo</option>
+                                    <option value="Inativo">Inativo</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="funcao">Função</label>
+                                <select id="funcao" name="funcao">
+                                    <option value="gerente">Gerente</option>
                                     <option value="funcionario">Funcionário</option>
                                     <option value="cliente">Cliente</option>
-                                    <option value="gerente">Gerente</option>
-                                    </select>
-                               </div>
+                                </select>
+                            </div>
+                        </div>
 
-                 
-                                     <div class="form-group">
-                                       <label for="imagem_pet">Anexar Imagem do Usuário</label>
-                                       <input type="file" id="imagem_pet" name="imagem_pet" accept="image/*">
-                                   </div>
-
-                           <div class="form-actions">
-                               <button type="submit">Salvar</button>
-                               <button type="reset">Limpar</button>
-                           </div>
-                       </form>
-                    </div>
-
+                        <div class="form-actions">
+                            <button type="submit">Salvar</button>
+                            <button type="reset">Limpar</button>
+                        </div>
+                    </form>
                 </div>
+            </div>
+        </main>
+    </div>
 
-            </main>
-        </div>
-
-      
+    <script src="editar_perfil.js"></script>
+</body>
+</html>

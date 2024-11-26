@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_ver_usuario.css">
+    <title>Ver Usuário</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h1>HotelPet</h1>
+            <nav>
+                <ul>
+                    <li><a href="/pets/pets.html">Pet</a></li>
+                    <li><a href="/usuarios/usuarios.html">Usuários</a></li>
+                    <li><a href="/configuracoes/configuracoes.html">Configurações</a></li>
+                    <li><a href="/reservas/reservas.html">Reservas</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <div class="perfil">
+                <div class="img-perfil">
+                    <a href="#"><img src="perfil.png" alt="Imagem de perfil" width="35" height="35"></a>
+                </div>
+            </div>
+
+            <div class="reservas">
+                <h2>Ver Usuário</h2>
+
+                <div class="usuario-detalhes">
+                    <p><strong>Email:</strong> <span id="usuario-email"></span></p>
+                    <p><strong>Nome:</strong> <span id="usuario-nome"></span></p>
+                    <p><strong>Status:</strong> <span id="usuario-status"></span></p>
+                    <p><strong>Função:</strong> <span id="usuario-funcao"></span></p>
+                    <p><strong>Criado em:</strong> <span id="usuario-criadoEm"></span></p>
+                    <div class="imagens-usuario">
+                        <h3>Imagem</h3>
+                        <img id="usuario-imagem" src="" alt="Imagem do Usuário" style="max-width: 200px;">
+                    </div>
+
+                    <div class="form-actions">
+                        <button onclick="window.history.back()">Voltar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="ver_usuario.js" defer></script>
+</body>
+</html>
