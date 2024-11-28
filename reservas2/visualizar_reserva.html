@@ -8,39 +8,33 @@
   </head>
   <body>
     <div class="container">
-      <!-- Menu lateral -->
       <aside class="sidebar">
-        <h2>Hotel Pet</h2>
+        <h1>HotelPet</h1>
         <nav>
           <ul>
-            <li><a href="pets.html">Pets</a></li>
-            <li><a href="usuarios.html">Usuários</a></li>
-            <li><a href="configuracoes.html">Configurações</a></li>
-            <li class="active"><a href="reservas.html">Reservas</a></li>
+            <li><a href="/pets/pets.html">Pet</a></li>
+            <li><a href="/usuarios/usuarios.html">Usuários</a></li>
+            <li><a
+                href="/reservas2/configuracoes.html">Configurações</a></li>
+            <li><a href="/reservas2/reservas.html">Reservas</a></li>
           </ul>
         </nav>
       </aside>
 
-      <!-- Conteúdo principal -->
-      <main class="main-content">
-        <!-- Cabeçalho -->
-        <header class="header">
-          <div class="breadcrumb">Home / Reservas / Ver Reserva</div>
-          <div class="user-info">
-            <span>João da Silva</span>
-            <img
-              src="https://cdn.icon-icons.com/icons2/933/PNG/512/round-account-button-with-user-inside_icon-icons.com_72596.png"
-              alt="Ícone de usuário"
-            />
+      <main class="content">
+        <div class="perfil">
+          <div class="img-perfil">
+            <a href="#"><img src="perfil.png" alt="Perfil"
+                width="35" height="35"></a>
           </div>
-        </header>
+        </div>
 
-        <!-- Seção de visualização da reserva -->
-        <section class="view-pet-section">
+        <div class="reservas">
           <h2>Ver Reserva</h2>
+      
           <div class="botaoEV">
-            <button class="btn edit" id="editarReserva">✎ Editar</button>
-            <button class="btn delete" id="deletarReserva">🗑️ Deletar</button>
+            <button class="btn edit" id="editarReserva">Editar</button>
+            <button class="btn delete" id="deletarReserva">Deletar</button>
           </div>
 
           <div class="pet-details" id="reservaDetalhes">
@@ -48,11 +42,10 @@
           </div>
 
           <button
-            class="btn back"
-            onclick="window.location.href='reservas.html'"
-          >
-            ← Voltar
+            onclick="window.location.href='reservas.html'">
+            Voltar
           </button>
+        </div>
         </section>
       </main>
     </div>

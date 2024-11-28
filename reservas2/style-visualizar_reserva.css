@@ -1,3 +1,4 @@
+/* Reset de margens e paddings */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,162 +7,278 @@
 
 body {
   font-family: Arial, sans-serif;
-  color: #333;
-  background-color: #ffffff;
+  margin: 0;
 }
 
 .container {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
+  /* Garante que ocupe a altura da tela */
+  background-color: #f5f5dc;
 }
 
+/* Sidebar */
 .sidebar {
-  width: 250px;
-  background-color: #CFFFC4;
+  width: 200px;
+  background-color: #99cdbf;
   padding: 20px;
   border-right: 1px solid #ddd;
+  /* Linha divisória */
+  min-height: 100vh;
+  /* Para ocupar toda a altura da página */
 }
 
-.sidebar h2 {
-  color: #2C5D12;
+.sidebar h1 {
+  font-size: 1.5rem;
+  color: #035f6b;
   margin-bottom: 20px;
 }
 
-.sidebar nav ul {
+/* Links da sidebar */
+.sidebar ul {
   list-style: none;
+  padding: 0;
 }
 
-.sidebar nav ul li {
-  margin-bottom: 15px;
+.sidebar ul li {
+  margin: 15px 0;
 }
 
-.sidebar nav ul li a {
+.sidebar ul li a {
+  color: #007d8d;
   text-decoration: none;
-  color: #333;
-  font-size: 16px;
+
 }
 
-.sidebar a:hover {
-  color: #6CE52B; /* Cor ao passar o mouse */
+.sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Conteúdo Principal */
+.perfil {
+  padding: 20px;
+  background-color: #99cdbf;
+  /* Fundo claro para visualização */
+  border-radius: 10px;
+}
+
+.img-perfil {
+  display: flex;
+  justify-content: right;
+
+}
+
+/* Estilo para a seção de reservas */
+.reservas {
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #99cdbf;
+  /* Fundo claro */
+  border-radius: 10px;
+}
+
+.reservas2 {
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #d3e6df;
+  border-radius: 10px;
+}
+
+.table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f5f5dc;
+  /*´rincipal*/
   font-weight: bold;
 }
 
-.sidebar nav ul li.active a {
-  color: #2C5D12;
-  font-weight: bold;
+.table tbody tr:nth-child(even) {
+  background-color: #e0efe9;
+  /* gringer*/
 }
 
-.main-content {
+.table a {
+  color: #007d8d;
+  /*editar*/
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.table .status {
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.table .status.ativo {
+  background-color: #4CAF50;
+}
+
+.table .status.inativo {
+  background-color: #e73403;
+}
+
+.content {
   flex: 1;
   padding: 20px;
 }
 
-.header {
+h2 {
+  font-size: 1.5rem;
+  color: #035f6b;
+  margin-bottom: 20px;
+}
+
+/* Estilos para o formulário de reservas */
+.form-reservas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para cada grupo de formulário */
+.form-group {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 20px;
+  flex-direction: column;
 }
 
-.breadcrumb {
-  font-size: 14px;
-  color: #666;
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #444;
 }
 
-.user-info {
-  display: flex;
-  align-items: center;
-}
-
-.user-info img {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-left: 10px;
-}
-
-.view-pet-section {
-  background-color: #CFFFC4;
-  padding: 20px;
-  border-radius: 8px;
-  margin-top: 20px;
-}
-
-.view-pet-section h2 {
-  margin-bottom: 20px;
-  font-size: 24px;
-}
-
-.image-placeholder {
-  width: 150px;
-  height: 150px;
-  background-color: #ccc;
+/* Estilo para os campos de entrada de data (lado a lado) */
+.form-group-periodo {
   display: inline-block;
-  border: 1px solid #aaa;
-  margin-bottom: 20px;
+  width: 49%;
+  font-weight: bold;
 }
 
-.btn.edit {
-  background-color: #ffffff;
-  color: #2C5D12;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 8px 12px;
-  margin-right: 10px;
+.form-group-periodo input {
+  width: 100%;
 }
 
-.btn.delete {
-  background-color: #ffffff;
-  color: #e80707;
-  border: 2px solid #e80707;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 8px 12px;
-  margin-right: 10px;
-}
-
-.btn.back {
-  background-color: #ffffff;
-  color: #2C5D12;
-  border: 2px solid #2C5D12;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 10px 15px;
-  display: inline-block;
-  margin-top: 20px;
-}
-
-.btn.back:hover,
-.btn.edit:hover,
-.btn.delete:hover {
-  background-color: #6CE52B;
-  color: #fff;
-}
-
-.botaoEV {
-  margin-bottom: 5ch;
-}
-
-.pet-details {
-  font-size: 16px;
-  color: #2C5D12;
-}
-
-.pet-details p {
-  margin: 5px 0;
-}
-
-.pet-details .image-placeholder {
-  width: 100px;
-  height: 100px;
-  background-color: #e0e0e0;
+/* Estilos gerais para inputs, selects e textarea */
+input,
+select,
+textarea {
+  padding: 7px;
+  font-size: 0.9rem;
   border: 1px solid #ccc;
-  display: inline-block;
+  border-radius: 5px;
+  background-color: #f3f3f3;
 }
 
-.pet-details a {
-  text-decoration: none;
+/* Estilos para botões de ação */
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-action_novareserva {
+  text-align: left;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #007d8d;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
   font-size: 14px;
+}
+
+button:hover {
+  background-color: #005f6a;
+}
+
+.total-diarias {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+  padding: 8px;
+  margin-left: 3ch;
+}
+
+.total-diarias span {
+  color: #2c5d12;
+  font-weight: bold;
+}
+
+
+.pets table {
+  width: 100%;
+  margin-top: 20px;
+  color: #005f6a;
+}
+
+.pets table body {
+  width: 100%;
+  margin-top: 200px;
+  color: #005f6a;
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f5f5dc;
+  /*´rincipal*/
+  font-weight: bold;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #e0efe9;
+  /* gringer*/
+}
+
+.table a {
+  color: #007d8d;
+  /*editar*/
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.table .status {
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #005f6a;
+  font-size: 12px;
+}
+
+.table .status.ativo {
+  background-color: #4CAF50;
+}
+
+.table .status.inativo {
+  background-color: #e73403;
 }
