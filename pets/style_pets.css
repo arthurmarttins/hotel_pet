@@ -12,7 +12,8 @@ body {
 
 .container {
     display: flex;
-    min-height: 100vh; /* Garante que ocupe a altura da tela */
+    min-height: 100vh;
+    /* Garante que ocupe a altura da tela */
     background-color: #f5f5dc;
 }
 
@@ -21,8 +22,10 @@ body {
     width: 200px;
     background-color: #99cdbf;
     padding: 20px;
-    border-right: 1px solid #ddd; /* Linha divisória */
-    min-height: 100vh; /* Para ocupar toda a altura da página */
+    border-right: 1px solid #ddd;
+    /* Linha divisória */
+    min-height: 100vh;
+    /* Para ocupar toda a altura da página */
 }
 
 .sidebar h1 {
@@ -44,7 +47,7 @@ body {
 .sidebar ul li a {
     color: #007d8d;
     text-decoration: none;
-    
+
 }
 
 .sidebar ul li a:hover {
@@ -54,21 +57,23 @@ body {
 /* Conteúdo Principal */
 .perfil {
     padding: 20px;
-    background-color: #99cdbf; /* Fundo claro para visualização */
+    background-color: #99cdbf;
+    /* Fundo claro para visualização */
     border-radius: 10px;
 }
 
-.img-perfil{
+.img-perfil {
     display: flex;
     justify-content: right;
-   
+
 }
 
 /* Estilo para a seção de reservas */
 .reservas {
     margin-top: 10px;
     padding: 20px;
-    background-color: #99cdbf; /* Fundo claro */
+    background-color: #99cdbf;
+    /* Fundo claro */
     border-radius: 10px;
 }
 
@@ -89,23 +94,27 @@ body {
     border-collapse: collapse;
 }
 
-.table th, .table td {
+.table th,
+.table td {
     padding: 10px;
     text-align: left;
     border: 1px solid #ddd;
 }
 
 .table th {
-    background-color: #f5f5dc; /*´rincipal*/
+    background-color: #f5f5dc;
+    /*´rincipal*/
     font-weight: bold;
 }
 
 .table tbody tr:nth-child(even) {
-    background-color: #e0efe9;  /* gringer*/
+    background-color: #e0efe9;
+    /* gringer*/
 }
 
 .table a {
-    color: #007d8d; /*editar*/
+    color: #007d8d;
+    /*editar*/
     text-decoration: none;
     margin: 0 5px;
 }
@@ -119,11 +128,29 @@ body {
 
 .table .status.ativo {
     background-color: #4CAF50;
+    /* Verde para status ativo */
 }
 
 .table .status.inativo {
     background-color: #e73403;
+    /* Laranja para status inativo */
 }
+
+.table .status.reservado {
+    background-color: #FFC107;
+    /* Amarelo para status reservado */
+}
+
+.table .status.em-andamento {
+    background-color: #2196F3;
+    /* Azul para status em andamento */
+}
+
+.table .status.cancelado {
+    background-color: #f44336;
+    /* Vermelho para status cancelado */
+}
+
 
 .content {
     flex: 1;
@@ -202,4 +229,3 @@ button {
 button:hover {
     background-color: #005f6a;
 }
-

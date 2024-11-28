@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-reservas.css" />
+    <title>Reservas</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Menu lateral -->
+      <aside class="sidebar">
+        <h1>HotelPet</h1>
+        <nav>
+          <ul>
+            <li><a href="/pets/pets.html">Pet</a></li>
+            <li><a href="/usuarios/usuarios.html">Usuários</a></li>
+            <li><a href="configuracoes.html">Configurações</a></li>
+            <li><a href="/reservas2/reservas.html">Reservas</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Conteúdo principal -->
+      <main class="content">
+        <div class="perfil">
+          <div class="img-perfil">
+            <a href="#"><img src="perfil.png" alt="Perfil" width="35"
+                height="35"></a>
+          </div>
+        </div>
+
+        <!-- Seção de Reservas -->
+        <div class="reservas">
+          <h2>Reservas</h2>
+          <button class="form-action_novareserva"
+            onclick="window.location.href='cadastrar_reserva.html'">
+            Nova Reserva
+          </button>
+          <button class="form-action_novareserva"
+            onclick="removerSelecionados()">
+            Remover
+          </button>
+
+          <!-- Formulário de Pesquisa -->
+          <div class="reservas2">
+            <form>
+              <div class="form-reservas">
+                <div class="form-group">
+                  <label for="id">Id:</label>
+                  <input type="text" id="id" name="id" />
+                </div>
+                <div class="form-group">
+                  <label for="proprietario">Proprietário:</label>
+                  <input type="text" id="proprietario" name="proprietario" />
+                </div>
+                <div class="form-group">
+                  <label for="status">Status:</label>
+                  <select id="status" name="status">
+                    <option value>Selecione</option>
+                    <option value="reservado">Reservado</option>
+                    <option value="em andamento">Em andamento</option>
+                    <option value="cancelado">Cancelado</option>
+                    <option value="finalizado">Finalizado</option>
+                  </select>
+                </div>
+                <div>
+                  <div class="form-group small-group">
+                    <label for="inicio">Início:</label>
+                    <input type="date" id="inicio" name="inicio" />
+                  </div>
+                  <div class="form-group small-group">
+                    <label for="termino">Término:</label>
+                    <input type="date" id="termino" name="termino" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="total">Total:</label>
+                  <input type="text" id="total" name="total" value="R$ 0,00" />
+                </div>
+                <div class="form-group">
+                  <label for="pet">Pet:</label>
+                  <input type="text" id="pet" name="pet" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="form-actions">
+            <button class="btn search" onclick="pesquisarReservas()">
+              Pesquisar
+            </button>
+            <button class="btn delete" onclick="limparPesquisa()">
+              Limpar
+            </button>
+          </div>
+
+          <!-- Tabela de Reservas -->
+          <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Id</th>
+                  <th>Pet</th>
+                  <th>Chegada</th>
+                  <th>Partida</th>
+                  <th>Status</th>
+                  <th>Total</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="pets-table-body">
+                <!-- As linhas da tabela serão preenchidas pelo JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script>
+      // Função para carregar reservas do localStorage
+      function carregarReservas(reservasFiltradas) {
+        let reservas =
+          reservasFiltradas ||
+          JSON.parse(localStorage.getItem("reservas")) ||
+          [];
+
+        // Verifique se reservas é um array
+        if (!Array.isArray(reservas)) {
+          console.error(
+            "reservas não é um array ou está corrompido:",
+            reservas
+          );
+          reservas = [];
+          // Corrija no localStorage para evitar problemas futuros
+          localStorage.setItem("reservas", JSON.stringify([]));
+        }
+
+        const tabelaReservas = document.querySelector("#pets-table-body");
+
+
+        // Limpar a tabela antes de preencher
+        tabelaReservas.innerHTML = "";
+
+        // Preencher a tabela com as reservas
+        reservas.forEach((reserva) => {
+          const linha = document.createElement("tr");
+          linha.innerHTML = `
+            <td><input type="checkbox" data-id="${reserva.id}" /></td>
+            <td>${reserva.id}</td>
+            <td>${reserva.pet}</td>
+            <td>${new Date(reserva.inicio).toLocaleDateString()}</td>
+            <td>${new Date(reserva.termino).toLocaleDateString()}</td>
+            <td>
+              <span class="status ${reserva.status ? reserva.status.toLowerCase().replace(" ", "-") : 'desconhecido'}">
+                ${reserva.status || 'Desconhecido'}
+              </span>
+            </td>
+            <td>R$ ${reserva.total.toFixed(2)}</td>
+            <td>
+              <a href="editar_reserva.html?id=${reserva.id}">Editar</a> |
+              <a href="visualizar_reserva.html?id=${reserva.id}">Visualizar</a>
+            </td>
+          `;
+          tabelaReservas.appendChild(linha);
+        });
+      }
+
+      // Função para remover reservas selecionadas
+      function removerSelecionados() {
+        const checkboxes = document.querySelectorAll(
+          '.pets-table tbody input[type="checkbox"]:checked'
+        );
+        const reservas = JSON.parse(localStorage.getItem("reservas")) || [];
+
+        // Filtrar as reservas que não estão selecionadas
+        const reservasAtualizadas = reservas.filter(
+          (reserva) =>
+            !Array.from(checkboxes).some(
+              (checkbox) => checkbox.dataset.id == reserva.id
+            )
+        );
+
+        // Atualizar o localStorage com as reservas não selecionadas
+        localStorage.setItem("reservas", JSON.stringify(reservasAtualizadas));
+
+        // Atualizar a tabela após a remoção
+        carregarReservas();
+      }
+
+      // Função para pesquisar reservas
+      function pesquisarReservas() {
+        const id = document.getElementById("id").value;
+        const proprietario = document.getElementById("proprietario").value;
+        const status = document.getElementById("status").value.toLowerCase();
+        const inicio = document.getElementById("inicio").value;
+        const termino = document.getElementById("termino").value;
+        const total = document
+          .getElementById("total")
+          .value.replace("R$", "")
+          .replace(",", ".");
+        const pet = document.getElementById("pet").value;
+
+        const reservas = JSON.parse(localStorage.getItem("reservas")) || [];
+
+        const reservasFiltradas = reservas.filter((reserva) => {
+          const inicioData = inicio ? new Date(inicio) : null;
+          const terminoData = termino ? new Date(termino) : null;
+          const totalValue = total
+            ? parseFloat(total.replace("R$", "").replace(",", "."))
+            : null;
+          return (
+            (id ? reserva.id.includes(id) : true) &&
+            (proprietario
+              ? reserva.proprietario.includes(proprietario)
+              : true) &&
+            (status ? reserva.status.toLowerCase() === status : true) &&
+            (inicio
+              ? inicioData?.getTime() === new Date(reserva.inicio).getTime()
+              : true) &&
+            (termino
+              ? terminoData?.getTime() === new Date(reserva.termino).getTime()
+              : true) &&
+            (totalValue ? totalValue === reserva.total : true) &&
+            (pet ? reserva.pet.includes(pet) : true)
+          );
+        });
+
+        carregarReservas(reservasFiltradas);
+      }
+
+      // Função para limpar campos de pesquisa
+      function limparPesquisa() {
+        document.getElementById("id").value = "";
+        document.getElementById("proprietario").value = "";
+        document.getElementById("status").value = "";
+        document.getElementById("inicio").value = "";
+        document.getElementById("termino").value = "";
+        document.getElementById("total").value = "R$ 0,00";
+        document.getElementById("pet").value = "";
+
+        carregarReservas();
+      }
+
+      // Chamar a função carregarReservas quando a página for carregada
+      window.onload = carregarReservas;
+    </script>
+  </body>
+</html>
